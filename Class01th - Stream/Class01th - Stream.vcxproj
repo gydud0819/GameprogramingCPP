@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{9fccd632-1a22-4066-817d-50002187deb0}</ProjectGuid>
-    <RootNamespace>Program</RootNamespace>
+    <ProjectGuid>{31e883ae-4de2-4af7-bec7-91edb04f94e2}</ProjectGuid>
+    <RootNamespace>Class01thStream</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,11 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="Program.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="GameObject.h" />
+    <ClCompile Include="Class01th - Stream.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
