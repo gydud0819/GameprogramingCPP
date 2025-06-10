@@ -1,6 +1,11 @@
 #pragma once
 #include <iostream>
-using namespace std;
+
+using std::cout;
+using std::endl;
+using std::cin;
+using std::string;
+
 
 class GameObject
 {
@@ -89,5 +94,22 @@ public:
 class Sphere : public GameObject 
 {
 
+};
+
+// 헤더파일에 따로 선언함
+// 정적 멤버 함수를 활용한 예시
+class BaseballPlayer
+{
+private:
+	string name;
+	static int teamScore;	// 정적 멤버 변수 선언 -> 메인에서 초기화 꼭 하기
+public:
+	BaseballPlayer() = default;
+	BaseballPlayer(string name) : name(name) {}		// BaseballPlayer 생성자
+
+	void SetHitTheBall();	// 안타친 점수 세팅
+
+	static int GetTeamScore();	// 정적 멤버 함수로 활용
+	
 };
 
