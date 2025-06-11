@@ -86,6 +86,13 @@ int main()
 	//item1.ItemInfo();
 	//item2.ItemInfo();
 
+	// 멤버 이니셜라이저로 한 깊은 복사
+	Item2 item1("A", 100);
+	item1.ShowItem();
+
+	Item2 item2(item1);
+	item2.ShowItem();
+
 #pragma endregion
 
 #pragma region 기본 매개 변수
