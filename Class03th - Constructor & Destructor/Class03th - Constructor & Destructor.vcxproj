@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{9fccd632-1a22-4066-817d-50002187deb0}</ProjectGuid>
-    <RootNamespace>Program</RootNamespace>
+    <ProjectGuid>{b76d0c21-f69f-44cc-bf44-9303fba326c6}</ProjectGuid>
+    <RootNamespace>Class03thConstructorDestructor</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,10 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Program.cpp" />
+    <ClCompile Include="Class03th - Constructor &amp; Destructor.cpp" />
+    <ClCompile Include="Unit.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Utility.h" />
+    <ClInclude Include="Unit.h" />
+    <ClInclude Include="Util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

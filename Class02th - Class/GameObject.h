@@ -31,7 +31,7 @@ public:
 
 	void SetX(int value)
 	{
-		
+
 
 		if (value >= 100)
 		{
@@ -91,11 +91,6 @@ public:
 
 };
 
-class Sphere : public GameObject 
-{
-
-};
-
 // 헤더파일에 따로 선언함
 // 정적 멤버 함수를 활용한 예시
 class BaseballPlayer
@@ -110,6 +105,13 @@ public:
 	void SetHitTheBall();	// 안타친 점수 세팅
 
 	static int GetTeamScore();	// 정적 멤버 함수로 활용
-	
+
+	~BaseballPlayer();
+
 };
+
+
+
+
+
 
