@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{9fccd632-1a22-4066-817d-50002187deb0}</ProjectGuid>
-    <RootNamespace>Program</RootNamespace>
+    <ProjectGuid>{82f76d7f-815e-49cb-8d24-3d9fd6eafedd}</ProjectGuid>
+    <RootNamespace>Class04thInheritance</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,10 +127,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Program.cpp" />
+    <ClCompile Include="..\Program\Bicycle.cpp" />
+    <ClCompile Include="..\Program\Boat.cpp" />
+    <ClCompile Include="..\Program\Cookie.cpp" />
+    <ClCompile Include="..\Program\Monster.cpp" />
+    <ClCompile Include="..\Program\Scooter.cpp" />
+    <ClCompile Include="..\Program\Vehicle.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Utility.h" />
+    <ClInclude Include="..\Program\Bicycle.h" />
+    <ClInclude Include="..\Program\Boat.h" />
+    <ClInclude Include="..\Program\Cookie.h" />
+    <ClInclude Include="..\Program\Monster.h" />
+    <ClInclude Include="..\Program\Scooter.h" />
+    <ClInclude Include="..\Program\Vehicle.h" />
+    <ClInclude Include="Util2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
