@@ -18,22 +18,22 @@
     <ClCompile Include="Source.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\Program\Bicycle.cpp">
+    <ClCompile Include="Bicycle.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\Program\Boat.cpp">
+    <ClCompile Include="Boat.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\Program\Cookie.cpp">
+    <ClCompile Include="Cookie.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\Program\Monster.cpp">
+    <ClCompile Include="Monster.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\Program\Scooter.cpp">
+    <ClCompile Include="Scooter.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\Program\Vehicle.cpp">
+    <ClCompile Include="Vehicle.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,22 +41,22 @@
     <ClInclude Include="Util2.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="..\Program\Bicycle.h">
+    <ClInclude Include="Bicycle.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="..\Program\Cookie.h">
+    <ClInclude Include="Boat.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="..\Program\Boat.h">
+    <ClInclude Include="Cookie.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="..\Program\Monster.h">
+    <ClInclude Include="Monster.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="..\Program\Scooter.h">
+    <ClInclude Include="Scooter.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="..\Program\Vehicle.h">
+    <ClInclude Include="Vehicle.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

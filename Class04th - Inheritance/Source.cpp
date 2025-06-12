@@ -1,8 +1,8 @@
 ﻿#include "Util2.h"
-#include "../Program/Scooter.h"
-#include "../Program/Monster.h"
-#include "../Program/Boat.h"
-#include "../Program/Bicycle.h"
+#include "Scooter.h"
+#include "Monster.h"
+#include "Boat.h"
+#include "Bicycle.h"
 
 int main()
 {

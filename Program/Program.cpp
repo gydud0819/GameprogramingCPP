@@ -1,15 +1,31 @@
 ﻿#include "Utility.h"
-#include "Cookie.h"
-#include "Monster.h"
-//#include "Vehicle.h"
-#include "Scooter.h"
-#include "Boat.h"
-#include "Bicycle.h"
+#include "Player.h"
 
 int main()
 {
 #pragma region 다중 상속 및 문제점 
-	// 
+	/*
+	* 하나의 클래스가 둘 이상의 상위 클래스로부터 행동이나 특성을 동시에 상속받는 것으로 여러 부모 클래스를 갖는 상속 구조이다.
+	* 다중 상속을 통해 파생 클래스는 여러 기초 클래스의 기능을 모두 물려받아 사용할 수 있다.
+	* 
+	* <문제점>
+	* 이름 충돌 - 서로 다른 부모 클래스에 동일한 이름의 멤버 함수가 있을 경우, 자식 클래스에서 어떤 함수를 호출해야 할지 모호해지는 문제가 발생한다
+	* 다이아몬드 상속 - 다중 상속 구조가 마치 다이아몬드 모양처럼 될 때 발생하는 문제이다.
+	* ex) 클래스 D가 B와 C를 상속받고, B와 C가 모두 A를 상속받는 경우, D는 A의 멤버를 두 번 상속받게 된다. 
+	* 이로 인해 A의 멤버가 중복되어 모호성이 발생하고, 객체 생성 시에도 A 클래스의 생성자가 여러 번 호출되는 문제가 발생한다.
+	*/
+
+	/*
+	* 해결 방법
+	* 스코프 해소 연산자 - 부모 클래스 이름을 명시하여 어떤 부모의 멤버를 사용할지 명확히 할 수 있다.
+	* 가상 상속(virtual Inheritance) - 가상 상속을 하면 최상위 클래스의 멤버가 중복 생성되지 않고 하나만 생성되어 모호성을 제거할 수 있다.
+	*/
+
+	// TwoWayPlayer는 Pitcher와 Batter 모두를 상속하고 있기 때문에 두 클래스가 각각 Player를 상속받으면서 Player가 중복된다.
+	// 이때 컴파일러는 어떤 Player를 참조해야 할지 모호해지는 에러가 발생한다.
+	
+	TwoWayPlayer ohtani("오타니 쇼헤이", "투타 겸업");
+	ohtani.ShowInfo();
 
 #pragma endregion
 

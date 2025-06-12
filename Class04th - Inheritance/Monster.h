@@ -1,5 +1,5 @@
 #pragma once
-#include "Utility.h"
+#include "Util2.h"
 
 class Monster
 {

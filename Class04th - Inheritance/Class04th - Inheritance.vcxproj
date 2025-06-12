@@ -127,22 +127,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Program\Bicycle.cpp" />
-    <ClCompile Include="..\Program\Boat.cpp" />
-    <ClCompile Include="..\Program\Cookie.cpp" />
-    <ClCompile Include="..\Program\Monster.cpp" />
-    <ClCompile Include="..\Program\Scooter.cpp" />
-    <ClCompile Include="..\Program\Vehicle.cpp" />
+    <ClCompile Include="Bicycle.cpp" />
+    <ClCompile Include="Boat.cpp" />
+    <ClCompile Include="Cookie.cpp" />
+    <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="Scooter.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Program\Bicycle.h" />
-    <ClInclude Include="..\Program\Boat.h" />
-    <ClInclude Include="..\Program\Cookie.h" />
-    <ClInclude Include="..\Program\Monster.h" />
-    <ClInclude Include="..\Program\Scooter.h" />
-    <ClInclude Include="..\Program\Vehicle.h" />
+    <ClInclude Include="Bicycle.h" />
+    <ClInclude Include="Boat.h" />
+    <ClInclude Include="Cookie.h" />
+    <ClInclude Include="Monster.h" />
+    <ClInclude Include="Scooter.h" />
     <ClInclude Include="Util2.h" />
+    <ClInclude Include="Vehicle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
