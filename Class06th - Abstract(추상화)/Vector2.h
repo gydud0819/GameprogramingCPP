@@ -1,5 +1,5 @@
 #pragma once
-#include "Utility.h"
+#include "util.h"
 class Vector2
 {
 	int x, y;
