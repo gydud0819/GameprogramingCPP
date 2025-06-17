@@ -127,3 +127,11 @@ void Vector2::Pos()
  {
 	 return this;
  }
+
+ Vector2& Vector2::operator[](int index)
+ {
+	 //return list[index];		
+	 // 클래스 내에 list라는 멤버 변수를 선언해줘야 하고 보통 템플릿 T와 많이 쓰지만 이 코드는 템플릿이 아니기에 예외로 이렇게 쓴다는 것만 알아두면 됨
+	 // 대괄호 오버로딩은 내부 배열 또는 벡터같은 자료구조가 있을 때 사용함
+	 // TODO: 여기에 return 문을 삽입합니다.
+ }

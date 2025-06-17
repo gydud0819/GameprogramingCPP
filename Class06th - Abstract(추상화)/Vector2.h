@@ -1,8 +1,10 @@
 #pragma once
 #include "util.h"
+
 class Vector2
 {
 	int x, y;
+	int list[];
 
 public:
 	Vector2() {}
@@ -30,6 +32,7 @@ public:
 	 Vector2 operator ~ () const;		// 비트 not
 	 int& operator * ();				// 역참조(포인터)
 	 Vector2* operator&();				// 주소값 반환
+	 Vector2& operator[] (int index) ;	// 대괄호 연산자 오버로딩 
 
 
 };
