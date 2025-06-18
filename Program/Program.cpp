@@ -1,116 +1,145 @@
 ﻿#include "Utility.h"
 
-#define SIZE 5
-
-template<typename T>
-bool Same(T x, T y)		// bool은 1 byte
-{
-
-	if (x == y)		// 이렇게 하라구용..?
-	
-		return true;
-
-	else
-	
-		return false;
-	
-
-	 return x == y;	// 이렇게 써도됨
-
-}
-
-//template<typename S>
-//bool Same(S left, S right)		// 문자열 길이가 같으면 된다구용..? 
-//{
-//	return left == right;	// ????????????????
-//}
-
-// 둘이 먼 차이임 
-
-//template<>
-//bool Same(const char* x, const char* y)
-//{
-//	return strlen(x) == strlen(y);
-//}
-
-
-// 템플릿 클래스 예제				진짜 몬말인지 모르겟다 집에가서 다시 해봐야겟다  
-template <typename T>
-class Container
-{
-	int index;				// private로 선언했으므로 Container의 멤버 변수
-	T list[SIZE];			// 배열의 크기를 SIZE 만큼 정의함
-public:
-	//Container() {}
-	//Container(int size) : size(size) {}
-
-	Container()		// 주석 달면서 다시 공부하기 
-	{
-		index = 0;						// 멤버 변수 index를 0으로 초기화 (현재 저장된 요소 개수를 의미)
-		for (int i = 0; i < SIZE; i++)		// SIZE만큼 돌리되
-		{
-			list[i] = NULL;					// 이때 list[i]는 NULL로 초기화함.  list[i]가 가리키는 게 아무것도 아닌 NULL을 가리켜야 함(쓰레기값이 들어갈 수 있기 때문에)
-			// 템플릿 타입 T가 포인터가 아니면 NULL을 넣는 게 맞지 않을 수 있음
-		}
-	}
-	// T& 앞에 const를 붙이는 이유 : 함수 밖에서 값을 수정하지 못하게 하려고
-	// 함수도 인덱스를 받아야 해서 파라미터(매개인자)가 int
-	const T& operator [] (int count)		// 연산자 대괄호 오버로딩 operator [] -> 배열은 아니지만 배열처럼 사용하겠다는 일종의 함수 
-	{
-		
-		return list[count];					// 연산자 오버로딩 같은 경우 return으로 반환해야 하고 여기서 list는 count번째 요소를 반환한다. 
-		// (count가 정해져있지 않기때문에 얼마만큼 정해져있는지 모름)
-	}
-
-	void Add(T data)		// 원래라면 int data였음. 그러나 값이 변형되기에 T로 반환하고 data
-	{
-		if (index < SIZE)	// 현재 index가 5로 정의한 배열의 크기 size보다 작으면
-		{
-			list[index++] = data;	// 현재 index 위치에 data를 넣고, index를 1 증가시킨다
-			
-			// list[index] = data;	// 위의 방식이 헷갈리면 이렇게 생각하기
-			// index = index + 1;
-		}
-		else
-		{
-			cout << "Index Out of Range" << endl;		// 배열의 요소가 넘어갔을 때 출력하는 경고
-		}
-	}
-};
-
 int main()
 {
-#pragma region 템플릿
-	// 데이터 형식에 의존하지 않고 하나의 값이 여러 다른 데이터 형식을 가질 수 있는 기술에 중점을 두어 재사용성을 높일 수 있는 기능
-	// 템플릿 사용방법 : template<typename T>
-	
-	//cout << Same<int>(3, 3) << endl;
-	//cout << Same<char>('N', 'C') << endl;
-	//cout << Same<float>(3.3f, 4.4f) << endl;
+#pragma region STL(Standrad Templte Library)
+	// 선형 컨테이너 : vector, deque, list, string
+	// 컨테이너 어댑터 : stack, queue, priority_queue
+	// 연관 컨테이너 : set, map, anoreded_set, anoreded_map   
+#pragma endregion
+
+#pragma region 선형 컨테이너
+
+#pragma region vector Container
+
+	//vector<int> vector;		// 가변 배열 
+	//
+	//vector.reserve(10);		// dlrp anjdu 
+	//
+	//vector.push_back(10);
+	//vector.push_back(20);
+	//vector.push_back(30);
+	//vector.push_back(40);
+	//vector.push_back(50);
+	//
+	//vector.pop_back();
+	//vector.pop_back();
+	//
+	//for (int i = 0; i < vector.size(); i++)
+	//{
+	//	cout << "vector 값 : " << vector[i] << " " << endl;
+	//}
 
 #pragma endregion
 
-#pragma region 템플릿 특수화
-	// 특정 자료형에 대해 다르게 처리하고 싶은 경우 특정한 자료형만 다른 형식으로 동작시키는 기능
-	// 
+#pragma region list Container
+	//list<int> list;
+	//
+	//// [20]
+	//list.push_back(20);
+	//// [20]->[30]
+	//list.push_back(30);
+	//// [10]->[20]->[30]
+	//list.push_front(10);
+	//
+	//// [20]->[30]
+	//list.pop_front();
+	//
+	//
+	//list.assign(3, 10);
+	//
+	//for (auto it :list)
+	//{
+	//	cout<< it << endl;
+	//}
+	//
+	//cout << "list size : " << list.size() << endl;
 
-	//cout << Same("apple", "bababa")<<endl;
-	//cout << Same("apple", "apple")<<endl;
+#pragma endregion
 
-	Container<int> container;
+#pragma region string
+	//string name;
+	//
+	////cout << &name << endl;
+	//
+	//
+	//name = "CookieRun";
+	//cout << name.append(" Kingdom") << endl;
+	//cout << name.capacity() << endl;	// 기본이 15?
+	////cout << name << endl;
+	//
+	//name = "Beast Eeast";
+	//cout << name << endl;
+	//cout << name.capacity() << endl;	
 
-	container.Add(10);
-	container.Add(20);
-	container.Add(30);
-	container.Add(40);
-	container.Add(50);
 
-	for (int i = 0; i < SIZE; i++)
+#pragma endregion
+
+#pragma endregion
+
+#pragma region 컨테이너 어댑터
+	// 우왕 잣댓당 오또케 수정해야하집? 어디서부터 손대야 할지 1도 모르겠당 히힛
+	// 청심환 몇개 먹어야 긴장이 안될까
+#pragma region stack
+	// 후입선출
+
+	//stack<int> stack;
+	//
+	//stack.push(10);
+	//stack.push(20);
+	//stack.push(30);
+	//stack.push(40);
+	//
+	//// 위에서부터 뽑고 출력한다
+	//
+	//// 개수만큼 돌려서 출력해야하니까 while이 좀 더 나은거 같기도한데 
+	//// 이중for문 쓰면 한번만 써도 되는거같긴한데 모르겟네 헷갈린다 
+	//for (int i = 0; i < stack.size(); i++)
+	//{
+	//	for (int i = 0; i < 2; i++)
+	//	{
+	//		cout << stack.top() << endl;
+	//		stack.pop();
+	//	
+	//	}
+	//}
+
+	/*for (int i = 0; i < stack.size(); i++)
 	{
-		cout << container[i] << endl;
-	}
+		cout << stack.top() << endl;
+		stack.pop();
+		cout << stack.top() << endl;
+		stack.pop();
+	}*/
+
+	/*while (stack.empty() == false)
+	{
+		cout << stack.top() << endl;
+		stack.pop();
+	}*/
+
 #pragma endregion
 
+#pragma region Queue Container
+	// 선입 선출 : 먼저 들어온 데이터가 먼저 나감 
+	queue<int> queue;
+
+	queue.push(10);
+	queue.push(20);
+	queue.push(30);
+	queue.push(40);
+	queue.push(50);
+
+	while (queue.empty() == false)
+	{
+		cout << queue.front() << endl;
+		queue.pop();
+	}
+		
+#pragma endregion
+
+
+#pragma endregion
+
+	return 0;
 }
-
-

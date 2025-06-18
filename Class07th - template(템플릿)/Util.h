@@ -4,14 +4,6 @@
 #include <time.h>
 #include <Windows.h>
 
-#include <vector>
-#include <queue>
-#include <list>
-#include <map>
-#include<stack>
-
-using namespace std;
-
 using std::cout;
 using std::cin;
 using std::endl;

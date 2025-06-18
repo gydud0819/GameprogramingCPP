@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class05th - Polymorphism", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class06th - Abstract(추상화)", "..\Class06th - Abstract(추상화)\Class06th - Abstract(추상화).vcxproj", "{3F10DEC1-B0AA-4BF5-A3A5-0AC3505D328B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class07th - template(템플릿)", "..\Class07th - template(템플릿)\Class07th - template(템플릿).vcxproj", "{286DA5C1-0260-4325-8A28-D31F976D9305}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -81,6 +83,14 @@ Global
 		{3F10DEC1-B0AA-4BF5-A3A5-0AC3505D328B}.Release|x64.Build.0 = Release|x64
 		{3F10DEC1-B0AA-4BF5-A3A5-0AC3505D328B}.Release|x86.ActiveCfg = Release|Win32
 		{3F10DEC1-B0AA-4BF5-A3A5-0AC3505D328B}.Release|x86.Build.0 = Release|Win32
+		{286DA5C1-0260-4325-8A28-D31F976D9305}.Debug|x64.ActiveCfg = Debug|x64
+		{286DA5C1-0260-4325-8A28-D31F976D9305}.Debug|x64.Build.0 = Debug|x64
+		{286DA5C1-0260-4325-8A28-D31F976D9305}.Debug|x86.ActiveCfg = Debug|Win32
+		{286DA5C1-0260-4325-8A28-D31F976D9305}.Debug|x86.Build.0 = Debug|Win32
+		{286DA5C1-0260-4325-8A28-D31F976D9305}.Release|x64.ActiveCfg = Release|x64
+		{286DA5C1-0260-4325-8A28-D31F976D9305}.Release|x64.Build.0 = Release|x64
+		{286DA5C1-0260-4325-8A28-D31F976D9305}.Release|x86.ActiveCfg = Release|Win32
+		{286DA5C1-0260-4325-8A28-D31F976D9305}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
