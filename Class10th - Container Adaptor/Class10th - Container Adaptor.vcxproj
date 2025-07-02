@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{9fccd632-1a22-4066-817d-50002187deb0}</ProjectGuid>
-    <RootNamespace>Program</RootNamespace>
+    <ProjectGuid>{e4fe7e03-5a23-4e7b-9fad-8c0217af92af}</ProjectGuid>
+    <RootNamespace>Class10thContainerAdaptor</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,14 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Packet.cpp" />
-    <ClCompile Include="Program.cpp" />
-    <ClCompile Include="Resource.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Packet.h" />
-    <ClInclude Include="Resource.h" />
-    <ClInclude Include="Utility.h" />
+    <ClInclude Include="Util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

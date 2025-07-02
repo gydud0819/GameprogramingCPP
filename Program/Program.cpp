@@ -1,142 +1,92 @@
 ﻿#include "Utility.h"
+#include "Packet.h"
+#include "Resource.h"
 
 int main()
 {
-#pragma region STL(Standrad Templte Library)
-	// 선형 컨테이너 : vector, deque, list, string
-	// 컨테이너 어댑터 : stack, queue, priority_queue
-	// 연관 컨테이너 : set, map, anoreded_set, anoreded_map   
-#pragma endregion
+#pragma region 스마트 포인터 (Smart Pointer)
+	// 따로 헤더가 필요한가 
+#pragma region 메모리 소유권
+	/*
+	* 메모리 소유권?
+	*
+	* unique_ptr	->
+	* shared_ptr
+	* weak_ptr
+	*/
 
-#pragma region 선형 컨테이너
+	// 메모리 소유권 예제 
 
-#pragma region vector Container
+	// ptr2 선언하고
+	// 중괄호 걸고
+	// ptr1 할당한 다음
+	// ptr2에 100 넣고
+	// ptr1을 해제해라? 
 
-	//vector<int> vector;		// 가변 배열 
-	//
-	//vector.reserve(10);		// dlrp anjdu 
-	//
-	//vector.push_back(10);
-	//vector.push_back(20);
-	//vector.push_back(30);
-	//vector.push_back(40);
-	//vector.push_back(50);
-	//
-	//vector.pop_back();
-	//vector.pop_back();
-	//
-	//for (int i = 0; i < vector.size(); i++)
+	//// 내가 한거 
+	//int* ptr2 = new int;
+	//int* ptr1 = ptr2;
 	//{
-	//	cout << "vector 값 : " << vector[i] << " " << endl;
+	//	*ptr2 = 100;
+	//	cout << "할당된 값 : " << *ptr1 << endl;
+
 	//}
+	//	delete ptr1; 
 
-#pragma endregion
+	// 내가 한것도 유사하긴한데 ptr1, 2가 둘다 같이 해제되서 소유권이 불분명해짐 
 
-#pragma region list Container
-	//list<int> list;
-	//
-	//// [20]
-	//list.push_back(20);
-	//// [20]->[30]
-	//list.push_back(30);
-	//// [10]->[20]->[30]
-	//list.push_front(10);
-	//
-	//// [20]->[30]
-	//list.pop_front();
-	//
-	//
-	//list.assign(3, 10);
-	//
-	//for (auto it :list)
+	// 모범 코드 (스마트 포인터를 쓰기 위한 과정)
+	//int* iptr2 = nullptr;
 	//{
-	//	cout<< it << endl;
+	//	int* iptr1 = new int;
+	//	iptr2 = iptr1;
+	//
 	//}
-	//
-	//cout << "list size : " << list.size() << endl;
+	//*iptr2 = 100;
+	//delete iptr2;
 
 #pragma endregion
 
-#pragma region string
-	//string name;
-	//
-	////cout << &name << endl;
-	//
-	//
-	//name = "CookieRun";
-	//cout << name.append(" Kingdom") << endl;
-	//cout << name.capacity() << endl;	// 기본이 15?
-	////cout << name << endl;
-	//
-	//name = "Beast Eeast";
-	//cout << name << endl;
-	//cout << name.capacity() << endl;	
+#pragma region unique pointer
+	// 특정한 객체를 하나의 스마트 포인터만 가리킬 수 있도록 되어 있는 포인터
+	// 사용 방법 : uinque_ptr <자료형> 변수명; = make_unique <자료형> ();		// 잊지말자 클래스도 하나의 자료형인걸 
+	// 하나의 객체만 가리킬 수 있다 == 하나의 메모리 공간만 가리킨다
+	// 소유권을 넘기면 해당 포인터에는 nullptr이 들어간다.
+	// 소유권 넘기는 방법 : std::move(변수)로 넘기기 
 
+	//unique_ptr <Packet> ptr = make_unique <Packet>();		// 동적할당 한 상태
+	//ptr->Receive();											// .이 아닌 ->를 직접써서 넘기기
+	//unique_ptr <Packet> ref = move(ptr);					// 메모리 소유권 넘기는 방법				이걸 어떻게 게임에 적용하지 
+	//ref->Receive();											// 개체가 이동되었다 그럼 이동한상태에서 써야하나 
+	
+	
+#pragma endregion
+
+#pragma region shared pointer
+	// 하나의 자원 객체를 여러 포인터 객체가 가리킬 수 있고 모든 포인터 객체가 자원을 객체를 필요하지 않을 때 자원 코드를 해제하도록 설계되어 있는 포인터
+	// shared_ptr <자료형> 변수명 = make_shared <자료형> ();
+
+	// 서로 참조해서 소멸자가 아닌 참조한 카운트 2가 나와야하는데 2랑 소멸자랑 같이 나와버리네? 
+	shared_ptr <Resource> oil = make_shared <Resource>();
+	//shared_ptr <Resource> mineral = oil;
+	shared_ptr <Resource> mineral = make_shared <Resource>();
+	oil->Share(mineral);
+	
+	
 
 #pragma endregion
 
-#pragma endregion
-
-#pragma region 컨테이너 어댑터
-	// 우왕 잣댓당 오또케 수정해야하집? 어디서부터 손대야 할지 1도 모르겠당 히힛
-	// 청심환 몇개 먹어야 긴장이 안될까
-#pragma region stack
-	// 후입선출
-
-	//stack<int> stack;
-	//
-	//stack.push(10);
-	//stack.push(20);
-	//stack.push(30);
-	//stack.push(40);
-	//
-	//// 위에서부터 뽑고 출력한다
-	//
-	//// 개수만큼 돌려서 출력해야하니까 while이 좀 더 나은거 같기도한데 
-	//// 이중for문 쓰면 한번만 써도 되는거같긴한데 모르겟네 헷갈린다 
-	//for (int i = 0; i < stack.size(); i++)
-	//{
-	//	for (int i = 0; i < 2; i++)
-	//	{
-	//		cout << stack.top() << endl;
-	//		stack.pop();
-	//	
-	//	}
-	//}
-
-	/*for (int i = 0; i < stack.size(); i++)
-	{
-		cout << stack.top() << endl;
-		stack.pop();
-		cout << stack.top() << endl;
-		stack.pop();
-	}*/
-
-	/*while (stack.empty() == false)
-	{
-		cout << stack.top() << endl;
-		stack.pop();
-	}*/
+#pragma region weak pointer
 
 #pragma endregion
 
-#pragma region Queue Container
-	// 선입 선출 : 먼저 들어온 데이터가 먼저 나감 
-	queue<int> queue;
 
-	queue.push(10);
-	queue.push(20);
-	queue.push(30);
-	queue.push(40);
-	queue.push(50);
+#pragma region R value L value
+	// R value vs L value 개념이랑 차이? 
+	// 대입 연산자 기준 오른쪽 왼쪽으로 나눈다? 머여 이게 
 
-	while (queue.empty() == false)
-	{
-		cout << queue.front() << endl;
-		queue.pop();
-	}
-		
 #pragma endregion
+
 
 
 #pragma endregion
