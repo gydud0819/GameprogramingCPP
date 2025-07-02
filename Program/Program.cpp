@@ -2,6 +2,17 @@
 #include "Packet.h"
 #include "Resource.h"
 
+void Lvalue(int& x) // 일반 참조
+{
+	cout << "L value 참조 : " << x << endl;
+	
+}
+
+void Rvalue(int&& x)	// 이동 참조
+{
+	cout << "R value 참조 : " << x << endl;
+}
+
 int main()
 {
 #pragma region 스마트 포인터 (Smart Pointer)
@@ -68,9 +79,9 @@ int main()
 
 	// 서로 참조해서 소멸자가 아닌 참조한 카운트 2가 나와야하는데 2랑 소멸자랑 같이 나와버리네? 
 	shared_ptr <Resource> oil = make_shared <Resource>();
-	//shared_ptr <Resource> mineral = oil;
 	shared_ptr <Resource> mineral = make_shared <Resource>();
 	oil->Share(mineral);
+	mineral->Share(oil);	// 서로 참조해야하기 때문에 참조를 하나 더 만들기 값은 반대로
 	
 	
 
@@ -82,8 +93,40 @@ int main()
 
 
 #pragma region R value L value
-	// R value vs L value 개념이랑 차이? 
-	// 대입 연산자 기준 오른쪽 왼쪽으로 나눈다? 머여 이게 
+	/*
+	* L value 와 R value
+	* L value
+	* 메모리 주소를 가지는 것, 참조가 가능한 것을 의미
+	* 대입 연산자 기준 왼쪽에 올 수 있음
+	* 
+	* ex) int x = 5;	'x'가 L value
+	* 
+	* R value
+	* 임시값, 메모리에 이름이 없는 것
+	* 대입 대상이 될 수 없고 오른쪽에서만 사용 
+	* 
+	* ex) 
+	* int x = 5;	'5'가 R value
+	* int y = x++;	'x++'가 R value
+	* 예외) '++x'은 L value
+	* 
+	* 대입 연산자 기준
+	* int x = 5;	'x'는 L value, '5'는 R value
+	* 
+	* 정리
+	* int& : L value 참조 -> L value 값만 받음
+	* int&& : R value 참조 -> R value 값만 받음
+	* const int& : 상수 참조 -> L-value와 R-value 모두 받을 수 있음 (R-value의 경우 임시 객체를 생성해줌)
+	*/
+	//int x = 4;
+	//Lvalue(x);		// x는 이름 있는 변수 -> L value
+	//Rvalue(23);		// 23은 임시값 -> R value
+	//Rvalue(x + 23);	// 'x + 5'는 계산 결과 -> R value
+	//Rvalue(move(x)); // std::move(x)는 x를 R-value로 간주만 하고 실제 이동은 move 함수 속 생성자/대입 연산자가 수행함
+
+	// 에러 예시(컴파일 오류)
+	// Lvalue(30);     //  30은 R-value인데 L-value 참조 함수에 전달함
+	// Rvalue(a);      //  x는 L-value인데 R-value 참조 함수에 전달함
 
 #pragma endregion
 
