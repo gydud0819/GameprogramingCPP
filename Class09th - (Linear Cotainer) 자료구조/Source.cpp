@@ -11,7 +11,7 @@ int main()
 #pragma region 선형 컨테이너
 
 #pragma region vector Container
-
+	// 메모리 파편화 발생
 	//vector<int> vector;		// 가변 배열 
 	//
 	//vector.reserve(10);		// dlrp anjdu 
@@ -73,6 +73,41 @@ int main()
 	//cout << name.capacity() << endl;	
 
 
+#pragma endregion
+
+#pragma region deque Container (덱 컨테이너)
+	// double ended Queue의 약자
+	// 선입선출 구조
+	// 청크단위로 나눠져 있다.
+	// 
+	
+	deque<int> dq;
+
+	// front 쓰나 back 쓰나 같을거같은데 아닌가 
+	// 섞어쓰고 sort로 정렬시켜도되는건가 되넹 근데 효율이 좀 떨어질거 같은데 
+	//dq.push_front(10);
+	//dq.push_back(20);
+	////dq.push_front(20);
+	//dq.push_front(30);
+	//dq.push_back(40);
+	////dq.push_front(40);
+	//dq.push_front(50);
+	//
+	////dq.push_back(10);
+	////dq.push_back(30);
+	////dq.push_back(50);
+	//
+	//dq.push_front(5);
+	//dq.push_front(1);
+	//
+	//dq.push_back(60);
+	//dq.push_back(75);
+	//
+	//for (int i = 0; i < dq.size(); i++)
+	//{
+	//	sort(dq.begin(), dq.end());		// 오름차순 정렬
+	//	cout << dq[i] << " ";
+	//}
 #pragma endregion
 
 #pragma endregion

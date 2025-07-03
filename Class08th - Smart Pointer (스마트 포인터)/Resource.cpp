@@ -7,8 +7,8 @@ Resource::~Resource()
 
 void Resource::Share(shared_ptr<Resource> oil)
 {
-	cout << oil.use_count() << endl;
-	this->mineral = oil;
+	cout << "ÂüÁ¶ È½¼ö : " << oil.use_count() << endl;
+	mineral = oil;
 }
 
 

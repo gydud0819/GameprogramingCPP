@@ -8,7 +8,9 @@
 #include <queue>
 #include <list>
 #include <map>
-#include<stack>
+#include <stack>
+#include <deque>
+#include <algorithm>
 
 using namespace std;
 
