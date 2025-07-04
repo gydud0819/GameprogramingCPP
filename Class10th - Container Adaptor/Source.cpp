@@ -66,8 +66,42 @@ int main()
 	// 구조가 덱으로 잡혀있음 -> 배열일 수 있다.
 	// logn 만큼의 시간이 걸림.
 	// 데이터에 접근하는 적중률이 높음
+	// 양쪽으로 삽입삭제 되는거 아닌가?
 
+	priority_queue<int> pq;
+	pq.push(10);
+	pq.push(9);
+	pq.push(20);
+	pq.push(31);
+
+	// 너무 비효율적이다.
+	/*for (int i = 0; i < pq.size(); i++)
+	{
+		cout << pq.top() << endl;
+		pq.pop();
+		cout << pq.top() << endl;
+		pq.pop();
+		cout << pq.top() << endl;
+		pq.pop();
+		cout << pq.top() << endl;
+		pq.pop();
+	}*/
+
+	// 굳이 for문 안써도 되네 왜지 
+	//cout << pq.top() << endl;
+	//pq.pop();
+	//cout << pq.top() << endl;
+	//pq.pop();
+	//cout << pq.top() << endl;
+	//pq.pop();
+	//cout << pq.top() << endl;
+	//pq.pop();
+
+	//while (pq.empty() == false)
+	//{
+	//	cout << pq.top() << endl;
+	//	pq.pop();
+	//}
 #pragma endregion
-
 }
 

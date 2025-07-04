@@ -9,6 +9,7 @@
 #include <list>
 #include <map>
 #include<stack>
+#include <algorithm>
 
 using namespace std;
 
