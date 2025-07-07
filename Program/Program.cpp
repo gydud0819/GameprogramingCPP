@@ -5,86 +5,86 @@ const int TABLE_SIZE = 11;		  // 해시 테이블의 전체 크기
 int hashTable[TABLE_SIZE];		  // 실제 해시 테이블 배열
 
 // 해시 테이블 초기화 함수
-void init() 
-{
-	for (int i = 0; i < TABLE_SIZE; ++i)
-		hashTable[i] = -1; // -1은 비어 있는 슬롯
-}
+//void init() 
+//{
+//	for (int i = 0; i < TABLE_SIZE; ++i)
+//		hashTable[i] = -1; // -1은 비어 있는 슬롯
+//}
 
 #pragma region 제곱 탐사 예시 코드
 // 기본 해시 함수: 키를 테이블 크기로 나눈 나머지
-int hashFunction(int key)
-{
-	return key % TABLE_SIZE;
-}
-
-// 제곱 탐사를 이용한 해시 테이블 삽입 함수
-void insertQuadratic(int key)
-{
-	int i = 0;
-	int idx;
-	while (i < TABLE_SIZE) 
-	{
-		// 제곱 탐사 공식: (h(k) + i^2) % m
-		idx = (hashFunction(key) + i * i) % TABLE_SIZE;
-		
-		// 비어있는 칸이면 삽입
-		if (hashTable[idx] == -1)
-		{
-			hashTable[idx] = key;
-			cout << "[제곱 탐사] " << key << " 삽입 후 할당된 인덱스 : " << idx << endl;
-			return;
-		}
-		// 충돌 발생 후 다음 제곱 거리만큼 이동하기
-		i++;
-	}
-	// 테이블이 가득 찼을 때
-	cout << "[제곱 탐사] 테이블이 모두 찼습니다. " << key << endl;
-}
+//int hashFunction(int key)
+//{
+//	return key % TABLE_SIZE;
+//}
+//
+//// 제곱 탐사를 이용한 해시 테이블 삽입 함수
+//void insertQuadratic(int key)
+//{
+//	int i = 0;
+//	int idx;
+//	while (i < TABLE_SIZE) 
+//	{
+//		// 제곱 탐사 공식: (h(k) + i^2) % m
+//		idx = (hashFunction(key) + i * i) % TABLE_SIZE;
+//		
+//		// 비어있는 칸이면 삽입
+//		if (hashTable[idx] == -1)
+//		{
+//			hashTable[idx] = key;
+//			cout << "[제곱 탐사] " << key << " 삽입 후 할당된 인덱스 : " << idx << endl;
+//			return;
+//		}
+//		// 충돌 발생 후 다음 제곱 거리만큼 이동하기
+//		i++;
+//	}
+//	// 테이블이 가득 찼을 때
+//	cout << "[제곱 탐사] 테이블이 모두 찼습니다. " << key << endl;
+//}
 #pragma endregion
 
 #pragma region 이중 해싱 예시 코드
 
 // 두 번째 해시 함수: R - (key % R)
-int h2(int key) 
-{
-	int R = 7; // TABLE_SIZE보다 작은 소수
-	return R - (key % R);
-}
-
-// 이중 해싱을 이용한 해시 테이블 삽입 함수
-void insertDoubleHashing(int key) 
-{
-	int i = 0;
-	int idx;
-	while (i < TABLE_SIZE) 
-	{
-		// 이중 해싱 공식: (h1(k) + i * h2(k)) % m
-		idx = (hashFunction(key) + i * h2(key)) % TABLE_SIZE;
-
-		// 비어있는 칸이면 삽입
-		if (hashTable[idx] == -1) 
-		{
-			hashTable[idx] = key;
-			cout << "[이중 해싱] " << key << " 삽입 후 할당된 인덱스 : " << idx << endl;
-			return;
-		}
-		// 충돌 발생 후 다음 보조 해시 거리만큼 이동하기
-		i++;
-	}
-	// 테이블이 가득 찼을 때
-	cout << "[이중 해싱] 테이블이 모두 찼습니다. " << key << endl;
-}
+//int h2(int key) 
+//{
+//	int R = 7; // TABLE_SIZE보다 작은 소수
+//	return R - (key % R);
+//}
+//
+//// 이중 해싱을 이용한 해시 테이블 삽입 함수
+//void insertDoubleHashing(int key) 
+//{
+//	int i = 0;
+//	int idx;
+//	while (i < TABLE_SIZE) 
+//	{
+//		// 이중 해싱 공식: (h1(k) + i * h2(k)) % m
+//		idx = (hashFunction(key) + i * h2(key)) % TABLE_SIZE;
+//
+//		// 비어있는 칸이면 삽입
+//		if (hashTable[idx] == -1) 
+//		{
+//			hashTable[idx] = key;
+//			cout << "[이중 해싱] " << key << " 삽입 후 할당된 인덱스 : " << idx << endl;
+//			return;
+//		}
+//		// 충돌 발생 후 다음 보조 해시 거리만큼 이동하기
+//		i++;
+//	}
+//	// 테이블이 가득 찼을 때
+//	cout << "[이중 해싱] 테이블이 모두 찼습니다. " << key << endl;
+//}
 #pragma endregion
 
 // 결과 출력
-void printTable(const string& label) 
-{
-	cout << label << "\n";
-	for (int i = 0; i < TABLE_SIZE; ++i)
-		cout << "[" << i << "] " << hashTable[i] << endl;
-	cout << "--------------------------" << endl;
-}
+//void printTable(const string& label) 
+//{
+//	cout << label << "\n";
+//	for (int i = 0; i < TABLE_SIZE; ++i)
+//		cout << "[" << i << "] " << hashTable[i] << endl;
+//	cout << "--------------------------" << endl;
+//}
 
 int main()
 {
@@ -156,7 +156,30 @@ int main()
 #pragma region set
 	// 레드 블랙 트리 구조
 	// 시간 복잡도 : logn
-	// 
+	
+#pragma endregion
+
+#pragma region unordered map
+	
+		// ->fisrt = key
+		// ->second = value
+	unordered_map<const char*, int> udm; // 범위기반으로 돌릴려면 auto& it 써야하는건가 
+	udm.insert({ "좀비", 20 });
+	udm.insert({ "거미", 20 });
+	udm.insert({ "토끼", 4 });
+
+	//sort(udm.begin(), udm.end());		// unordered_map은 sort함수를 쓸 수 없다. 
+
+	for (auto& it : udm)
+	{
+		cout << it.first << " " << it.second << " " << endl;
+	}
+
+	udm.clear();
+
+	cout << "udm의 load_factor : " << udm.load_factor() << endl;
+	cout << "udm의 bucket_count : " << udm.bucket_count() << endl;
+
 #pragma endregion
 
 
@@ -210,24 +233,24 @@ int main()
 #pragma endregion
 	
 	// 제곱 탐사 테스트
-init();
-insertQuadratic(1);
-insertQuadratic(25);
-insertQuadratic(23);
-insertQuadratic(37);
-insertQuadratic(54);
-cout << endl;
-printTable("== 제곱 탐사 결과 ==");
-
-
-// 이중 해싱 테스트
-init();
-insertDoubleHashing(1);
-insertDoubleHashing(25);
-insertDoubleHashing(23);
-insertDoubleHashing(37);
-insertDoubleHashing(54);
-printTable("== 이중 해싱 결과 ==");
+//init();
+//insertQuadratic(1);
+//insertQuadratic(25);
+//insertQuadratic(23);
+//insertQuadratic(37);
+//insertQuadratic(54);
+//cout << endl;
+//printTable("== 제곱 탐사 결과 ==");
+//
+//
+//// 이중 해싱 테스트
+//init();
+//insertDoubleHashing(1);
+//insertDoubleHashing(25);
+//insertDoubleHashing(23);
+//insertDoubleHashing(37);
+//insertDoubleHashing(54);
+//printTable("== 이중 해싱 결과 ==");
 
 // -1은 충돌 해결 과정에서 사용되지 않은, 비어 있는 슬롯이다.
 //해시 함수 결과가 겹쳐서 충돌이 발생했지만, 탐사 과정에서 건너뛴 자리로 남아 있다.
